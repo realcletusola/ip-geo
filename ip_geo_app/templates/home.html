@@ -1,0 +1,62 @@
+{% block content %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ip Geo</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h4> Get IP Information and Fraudscore </h4>
+    
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="ip_address" id="id_ip_address" required >
+            <button type="submit">Check</button>
+        </form>
+ 
+        <p class="help_text"> Enter IP Address to check IP fraud score and IP Info. </p>
+        <br>
+        {% comment %} display django messages {% endcomment %}
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == "success" %}
+        <p class="success">{{message}}</p>
+        {% elif message.tags == "info" %}
+        <p class="info">{{message}}</p>
+        {% elif message.tags == "error" %}
+        <p class="error">{{message}}</p>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        <br><br>
+        {% if ip_info_error %}<p class="error">{{ip_info_error}}</p>{% endif %}
+        {% if ip_score_error %}<p class="error">{{ip_score_error}}</p>{% endif %}
+        <br>
+        {% comment %} {% if context %} {% endcomment %}
+        <div class="result">
+            {% if ip_score%}<p><b>IP Score:</b> {{ip_score}}</p>{% endif %}<br>
+            {% if ip_status%}<p><b>IP Status:</b> {{ip_status}}</p>{% endif %}
+            {% if country%}<p><b>IP Country:</b> {{country}}</p>{% endif %}
+            {% if country_code%}<p><b>IP Country Code:</b> {{country_code}}</p>{% endif %}
+            {% if region%}<p><b>IP Region:</b> {{region}}</p>{% endif %}
+            {% if region_name%}<p><b>IP Region Name:</b> {{region_name}}</p>{% endif %}
+            {% if city%}<p><b>IP City:</b> {{city}}</p>{% endif %}
+            {% if zip%}<p><b>IP Zip:</b> {{zip}}</p>{% endif %}
+            {% if latitude%}<p><b>IP Latitude:</b> {{latitude}}</p>{% endif %}
+            {% if longitude%}<p><b>IP Longitude:</b> {{longitude}}</p>{% endif %}
+            {% if timezone%}<p><b>IP Timezone:</b> {{timezone}}</p>{% endif %}
+            {% if isp%}<p><b>IP ISP:</b> {{isp}}</p>{% endif %}
+            {% if isp_org%}<p><b>IP ISP Org:</b> {{isp_org}}</p>{% endif %}
+            {% if isp_ass%}<p><b>IP ISP Association:</b> {{isp_ass}}</p>{% endif %}
+
+        </div>
+        {% comment %} {% endif %} {% endcomment %}
+    </div>
+</body>
+</html>
+
+{% endblock %}

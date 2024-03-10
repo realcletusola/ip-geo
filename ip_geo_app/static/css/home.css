@@ -1,0 +1,59 @@
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    /* background-color: rgb(215, 219, 219); */
+    text-align: center;
+}
+
+h4{
+    color: rgb(23, 23, 187);
+}
+
+.container form input{
+    width: 300px;
+    padding: 6px;
+}
+.container form button {
+    padding: 8px;
+    /* width: 10px; */
+    border: transparent;
+    border-radius: 6px;
+    background-color: rgb(23, 23, 187);
+    color: white;
+    font-weight: bold;
+}
+.success{
+    color: green;
+    font-style: oblique;
+    font-weight: bold;
+}
+.info{
+    color: yellowgreen;
+    font-size: oblique;
+    font-weight: bold;
+}
+.error{
+    color: red;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.help_text{
+    font-size: 16px;
+    font-style: oblique;
+}
+
+.result{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding: 8px;
+    background-color: rgb(23, 23, 187);
+    color: white;
+    border-radius: 5px;
+}
+.result p b {
+    font-style: italic;
+    font-size: 14px;
+}
