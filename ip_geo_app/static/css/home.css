@@ -2,7 +2,6 @@
     width: 80%;
     margin: auto;
     padding: 10px;
-    /* background-color: rgb(215, 219, 219); */
     text-align: center;
 }
 
@@ -16,7 +15,6 @@ h4{
 }
 .container form button {
     padding: 8px;
-    /* width: 10px; */
     border: transparent;
     border-radius: 6px;
     background-color: rgb(23, 23, 187);
