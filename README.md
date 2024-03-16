@@ -1,2 +1,2 @@
-<h5> A django app for getting IP fraud score and geo-location information</h5>
+<h5>Integrating external APIs into Django app to get user IP information and fraud score</h5>
 
